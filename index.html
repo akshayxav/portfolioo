@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akshay Xaviour Aju | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #050505;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 15px 40px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+nav a {
+    color: #aaa;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #00ffd5;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, #0a0a0a, #000);
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 60px;
+    text-shadow: 0 0 20px #00ffd5;
+}
+
+.hero span {
+    color: #00ffd5;
+}
+
+.hero p {
+    color: #aaa;
+}
+
+/* SECTIONS */
+.section {
+    padding: 100px 40px;
+    max-width: 1200px;
+    margin: auto;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1s;
+}
+
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2 {
+    border-left: 4px solid #00ffd5;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* CARD */
+.card {
+    background: #111;
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.4s;
+    box-shadow: 0 0 0 transparent;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #00ffd5;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #00ffd5;
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* GALLERY */
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+}
+
+/* MOBILE */
+@media(max-width:768px) {
+    .hero h1 { font-size: 40px; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h3>Akshay Xaviour Aju</h3>
+    <div>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#designs">Designs</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Hi, I'm <span>Akshay Xaviour</span></h1>
+    <p>Computer Science Student | Web Developer | Graphic Designer | Editor</p>
+</div>
+
+<!-- ABOUT -->
+<div class="section" id="about">
+    <h2>About Me</h2>
+    <p>
+        Creative, confident, and detail-oriented BCA student with strong skills in graphic design, basic video editing, web development, and AI tools. Known for leadership and team management as College Union Chairman and Technical Head. Experienced in creating engaging digital content, building simple and user-friendly websites, and effectively using AI tools to enhance productivity and creativity. Passionate about combining technology and creativity to deliver impactful digital solutions.
+
+    </p>
+</div>
+
+<!-- PROJECTS -->
+<div class="section" id="projects">
+    <h2>Projects</h2>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Astra Fest Website</h3>
+            <p>Full website developed for intercollegiate fest.</p>
+            <a href="https://astrafest.live" target="_blank" class="btn">View Project</a>
+        </div>
+
+        <div class="card">
+            <h3>AI Workflow</h3>
+            <p>Using AI tools for productivity & creative output.</p>
+        </div>
+
+        <div class="card">
+            <h3>Social Media</h3>
+            <p>Managing college digital presence.</p>
+        </div>
+    </div>
+</div>
+
+<!-- DESIGNS -->
+<div class="section" id="designs">
+    <h2>Design Works</h2>
+
+    <div class="grid gallery">
+        <img src="images/design1.jpg">
+        <img src="images/design6.jpg">
+        <img src="images/design3.jpg">
+        <img src="images/design4.jpg">
+        <img src="images/design5.jpg">
+        <img src="images/design2.jpg">
+        <img src="images/design7.jpg">
+        <img src="images/design9.jpg">
+        <img src="images/design8.jpg">
+    </div>
+</div>
+
+<!-- CONTACT -->
+<div class="section" id="contact">
+    <h2>Contact</h2>
+    <p>
+        Email: akshayofficial2006@gmail.com <br>
+        Phone: +91 8660944343
+    </p>
+</div>
+
+<footer>
+    © 2026 Akshay Xaviour
+</footer>
+
+<!-- JS SCROLL ANIMATION -->
+<script>
+const sections = document.querySelectorAll('.section');
+
+window.addEventListener('scroll', () => {
+    sections.forEach(sec => {
+        const top = window.scrollY;
+        const offset = sec.offsetTop - 400;
+
+        if(top > offset){
+            sec.classList.add('show');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
